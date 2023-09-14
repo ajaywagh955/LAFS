@@ -1,0 +1,128 @@
+
+
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce Website</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="shortcut icon" href="{% static 'home/img/logo.png'%}" type="image/x-icon">
+
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+</head>
+
+<body>
+
+
+    <section id="header">
+        <a href="#"><img src="{% static 'home/img/logo.png' %}" alt="" class="logo"></a>
+        <div class="">
+            <ul id="navbar">
+                <li><a  href="{% url 'index' %}">Home</a></li>
+                <li><a class="active" href="{% url 'viewlostitems' %}">Lost Items</a></li>
+                <li><a href="{% url 'foundeditem' %}">Founded Items</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}"><button class="nav-normal">Logout</button></a></li>
+                {% else %}
+                <li><a href="{% url 'login' %}"><button class="nav-normal">Login</button></a></li>
+                {% endif %}
+                <a href="#" id="close"><i class="far fa-times"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+
+    <section>
+        <form class="form-search" method="get" action="{% url 'Search' %}">
+            <input type="search" name="query" id="query" placeholder="search your item here.." required>
+            <button type="submit">Search</button>
+            <p></p>
+        </form>
+
+    </section>
+    
+
+<style>
+    
+</style>
+    <section id="product1" class="section-p1">
+        <h2>Lost Items</h2>
+        <p>Help us to find this that below products</p>
+        <div class="pro-container">
+
+            {% for lost_items in item %}
+                <div class="pro">
+                    <img  src="{{lost_items.photo.url}}" alt="">
+                    <div class="des">
+                        <span>{{lost_items.item_type}}</span>
+                        <h5>{{lost_items.name}}</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>&#128077;</h4>
+                    </div>
+                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+                {% endfor %}
+
+             
+        </div>
+    </section>
+
+
+    <footer class="section-p1">
+        <div class="col">
+            <img src="{% static 'home/img/logo.png'%}" alt="">
+            <h4 style="margin-top: 20px;margin-bottom:-15px">Contact</h4>
+            <p><strong>Address :</strong>Not Decided Right Now<p>
+            <p><Strong>Phone :</Strong>9356987231</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Term & Conditions</a>
+            <a href="#">Contact Us</a>            
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Login</a>
+            <a href="#">Register</a>
+            <a href="#">Message</a>
+            <a href="#">Profile</a>
+            <a href="">Logout</a>            
+        </div>
+
+    </footer>        
+
+    <div class="copyright">
+        <p>All right reserved to <strong><i>Ajay Wagh</i></strong></p>
+    </div>
+    <script src="{% static 'home/js/script.js'%}"></script>
+
+</body>
+
+</html>

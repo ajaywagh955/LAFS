@@ -1,0 +1,162 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<table border="1">
+    <thead>
+        <th>Name</th>
+        <th>Item Type</th>
+        <th>Color</th>
+        <th>Size</th>
+        <th>Brand</th>
+        <th>Lost Date</th>
+        <th>Lost Time</th>
+        <th>Location</th>
+        <th>Contact Name</th>
+        <th>Phone Number</th>
+        <th>Email ID</th>
+        <th>Additiona Comments</th>
+        <th>Photo</th>
+        <th>Submission Date</th>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td>{{item.name}}</td>
+            <td>{{item.item_type}}</td>
+            <td>{{item.color}}</td>
+            <td>{{item.size}}</td>
+            <td>{{item.brand}}</td>
+            <td>{{item.founded_date}}</td>
+            <td>{{item.founded_time}}</td>
+            <td>{{item.location}}</td>
+            <td>{{item.contact_name}}</td>
+            <td>{{item.phone_number}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.additional_comments}}</td>
+            <td><img style="height: 40px;" src="/media/{{item.photo}}" alt=""></td>
+            <td>{{item.submission_date}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html> {% endcomment %}
+
+
+
+
+
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce Website</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="shortcut icon" href="{% static 'home/img/logo.png'%}" type="image/x-icon">
+
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+</head>
+
+<body>
+
+
+
+
+    <section>
+        <form class="form-search" method="get" action="#">
+            <input type="search" name="search" placeholder="search your item here.." required>
+            <button type="submit">Search</button>
+            
+        </form>
+    
+    </section>
+    
+
+<style>
+    
+</style>
+    <section id="product1" class="section-p1">
+        <h2>Founded Items</h2>
+        <p>Help us to find the owner of below products</p>
+        <div class="pro-container">
+
+            {% for item in items %}
+                <div class="pro">
+                    <img style="" src="{{item.photo.url}}" alt="">
+                    <div class="des">
+                        <span>{{item.item_type}}</span>
+                        <h5>{{item.name}}</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>&#128077;</h4>
+                    </div>
+                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+                {% endfor %}
+
+             
+        </div>
+    </section>
+
+
+    <footer class="section-p1">
+        <div class="col">
+            <img src="{% static 'home/img/logo.png'%}" alt="">
+            <h4 style="margin-top: 20px;margin-bottom:-15px">Contact</h4>
+            <p><strong>Address :</strong>Not Decided Right Now<p>
+            <p><Strong>Phone :</Strong>9356987231</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Term & Conditions</a>
+            <a href="#">Contact Us</a>            
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Login</a>
+            <a href="#">Register</a>
+            <a href="#">Message</a>
+            <a href="#">Profile</a>
+            <a href="">Logout</a>            
+        </div>
+
+    </footer>        
+
+    <div class="copyright">
+        <p>All right reserved to <strong><i>Ajay Wagh</i></strong></p>
+    </div>
+    <script src="{% static 'home/js/script.js'%}"></script>
+</body>
+
+</html>

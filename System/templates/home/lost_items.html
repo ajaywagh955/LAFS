@@ -1,0 +1,243 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce Website</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+</head>
+
+<body>
+
+
+
+    
+    <section id="header">
+        <a href="#"><img src="{% static 'home/img/logo.png' %}" alt="" class="logo"></a>
+        <div class="">
+            <ul id="navbar">
+                <li><a  href="{% url 'index' %}">Home</a></li>
+                <li><a class="active" href="{% url 'lostitem' %}">Lost Items</a></li>
+                <li><a href="{% url 'foundeditem' %}">Founded Items</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}"><button class="nav-normal">Logout</button></a></li>
+                {% else %}
+                <li><a href="{% url 'login' %}"><button class="nav-normal">Login</button></a></li>
+                {% endif %}
+                <a href="#" id="close"><i class="far fa-times"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+
+
+
+<section>
+    <form class="form-search" method="get" action="#">
+        <input type="search" name="search" placeholder="search your item here..">
+        <button type="submit">Search</button>
+        
+    </form>
+
+</section>
+
+
+    <section id="product1" class="section-p1">
+        <h2>Lost Itmes</h2>
+        <p>This items has recently lost please help us to find them</p>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="{% static 'home/img/products/f1.jpg'%}" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Cartoon Austronaut T-shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$78</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="{% static 'home/img/products/f2.jpg'%}" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Cartoon Austronaut T-shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$78</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="{% static 'home/img/products/f3.jpg'%}" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Cartoon Austronaut T-shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$78</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="{% static 'home/img/products/f4.jpg'%}" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Cartoon Austronaut T-shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$78</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="{% static 'home/img/products/f5.jpg'%}" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Cartoon Austronaut T-shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$78</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="{% static 'home/img/products/f6.jpg'%}" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Cartoon Austronaut T-shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$78</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="{% static 'home/img/products/f7.jpg'%}" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Cartoon Austronaut T-shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$78</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="{% static 'home/img/products/f8.jpg'%}" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Cartoon Austronaut T-shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$78</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+    <footer class="section-p1">
+        <div class="col">
+            <img src="{% static 'home/img/logo.png'%}" alt="">
+            <h4 style="margin-top: 20px;margin-bottom:-15px">Contact</h4>
+            <p><strong>Address :</strong>Not Decided Right Now<p>
+            <p><Strong>Phone :</Strong>9356987231</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Term & Conditions</a>
+            <a href="#">Contact Us</a>            
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Login</a>
+            <a href="#">Register</a>
+            <a href="#">Message</a>
+            <a href="#">Profile</a>
+            <a href="">Logout</a>            
+        </div>
+        <!-- <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play Store</p>
+            <div class="row">
+                <img src="img/pay/app.jpg" alt="">
+                <img src="img/pay/play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="img/pay/pay.png" alt="">
+        </div> -->
+
+    </footer>        
+
+    <div class="copyright">
+        <p>All right reserved to <strong><i>Ajay Wagh</i></strong></p>
+    </div>
+    <script src="{% static 'home/js/script.js' %}"></script>
+</body>
+
+</html>

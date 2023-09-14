@@ -1,0 +1,121 @@
+{% comment %} <html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Founded Items</title>
+</head>
+
+<body>
+
+
+
+    <form action="{% url 'founded_item_index' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <input type="text" name="name" id="" placeholder="Enter Name"><br>
+        <input type="text" name="item_type" id="" placeholder="Enter Item Type"><br>
+        <input type="text" name="color" id="" placeholder="Enter Color"><br>
+        <input type="text" name="size" id="" placeholder="Enter Size"><br>
+        <input type="text" name="brand" id="" placeholder="Enter Brand "><br>
+        <input type="date" name="lost_date" id=""><br>
+        <input type="time" name="lost_time" id=""><br>
+        <input type="text" name="location" id="" placeholder="Enter Location"><br>
+        <input type="text" name="phone_number" id="" placeholder="Enter Phone Number"><br>
+        <input type="email" name="email" id="" placeholder="Enter Email"><br>
+        <textarea name="additional_comments" id="" placeholder="Additional Comments"></textarea><br>
+        <input type="file" name="photo" id=""><br>
+        <input type="submit" value="Submit">
+
+
+
+    </form>
+
+
+
+</body>
+
+</html> {% endcomment %}
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'FoundedItem/style.css' %}">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">Founded Item Submission</div>
+        <form action="{% url 'founded_item_index' %}" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            <div class="user__details">
+                <div class="input__box">
+                    <span class="details">Item Name</span>
+                    <input type="text" name="name"  placeholder="E.g: John Smith" required>
+                </div>
+                <div class="input__box">
+                    <span class="details">Item Type</span>
+                    <input type="text" name="item_type" placeholder="johnWC98" required>
+                </div>
+                <div class="input__box">
+                    <span class="details">Color</span>
+                    <input type="text" name="color" placeholder="johnWC98" required>
+                </div>
+                <div class="input__box">
+                    <span class="details">Size</span>
+                    <input type="text" name="size" placeholder="johnWC98" required>
+                </div>
+                <div class="input__box">
+                    <span class="details">Brand</span>
+                    <input type="text" name="brand" placeholder="johnWC98" required>
+                </div>
+                <div class="input__box">
+                    <span class="details">Founded Date</span>
+                    <input type="date" name="lost_date" placeholder="johnWC98" required>
+                </div>
+                <div class="input__box">
+                    <span class="details">Founded Time</span>
+                    <input type="time" name="lost_time" placeholder="johnWC98" required>
+                </div>
+                <div class="input__box">
+                    <span class="details">Location</span>
+                    <input type="text" name="location" placeholder="johnWC98" required>
+                  </div>
+                  <div class="input__box">
+                    <span class="details">Contact Name</span>
+                    <input type="text" name="contact_name" placeholder="johnWC98" required>
+                  </div>
+                  <div class="input__box">
+                    <span class="details">Phone Number</span>
+                    <input type="text" name="phone_number"  placeholder="012-345-6789" required>
+                </div>
+                <div class="input__box">
+                    <span class="details">Email</span>
+                    <input type="email" name="email" placeholder="johnsmith@hotmail.com" required>
+                </div>
+                <div class="input__box">
+                    <span class="details">Upload Image</span>
+                    <input type="file" name="photo" placeholder="********" required>
+                </div>
+                <div class="input__box">
+                    <span class="details">Additional Comments</span>
+                    <textarea name="additional_comments" id="" cols="40" rows="4"></textarea>
+                </div>
+
+            </div>
+            
+            <div class="button">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
